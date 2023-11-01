@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+:root {
+    /*var();*/
+    --arancione: #F1711A;
+    --grigioscuro: darkslategrey;
+    --grigiochiaro: #E7E6E6;
+    --sondaggipanel: gainsboro;
+  }
+
+body{
+    background-color: var(--grigiochiaro);
+}
+
+*{
+    font-family: 'Roboto';
+    user-select: none;
+}
+button{
+    outline: none;
+}
+
+.btn-danger{
+    outline: none;
+    background-color: #d62828;
+}
+.btn-danger:hover{
+    background-color: #d62828;
+}
+
+.btn-primary{
+    outline: none;
+    background-color: #4361ee;
+}
+.btn-primary:hover{
+    background-color: #4361ee;
+}
+
+.alert-success{
+    background-color: #25D366;
+    color:white;
+    position: absolute;
+    animation: fade 3s ease-in-out;
+    animation-fill-mode:both; 
+}
+
+.alert-danger{
+    background-color: #d62828;
+    color:white;
+    position: absolute;
+    animation: fade 3s ease-in-out;
+    animation-fill-mode:both; 
+}
+
+
+@keyframes fade  {
+    100% { opacity: 0; }
+}

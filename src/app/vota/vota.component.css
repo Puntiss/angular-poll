@@ -1,0 +1,162 @@
+.page-header{
+    background-color: var(--grigiochiaro);
+    border: none;
+    color: var(--grigioscuro);
+    border-bottom: 5px solid var(--grigioscuro);
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+
+input[type='radio'] {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    border: 3px solid var(--arancione);
+}
+
+input[type='radio']:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked:before {
+    background: var(--arancione);
+    
+}
+
+input[type="radio"]:checked {
+  border-color:var(--arancione);
+}
+
+.role {
+    margin-right: 80px;
+    margin-left: 20px;
+    font-weight: normal;
+}
+
+.btn{
+    width: 50%;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.barra {
+    background-color: var(--arancione);
+    height: 10px;
+    animation: progressBar 2s ease-in-out;
+    animation-fill-mode:both; 
+}
+
+@keyframes progressBar {
+    0% { width: 0; }
+}
+
+
+
+/*Share*/
+.dot{
+    background-color: var(--arancione);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-bottom: 5px;
+    /*display: flex;
+    flex-wrap: wrap;
+    align-content: center;*/
+  }
+
+  .dot i{
+    font-size: 40px;
+    margin-top: 12px;
+    display: flex;
+  }
+
+  .bi::before{
+    padding: 0;
+    vertical-align: 0;
+  }
+
+  .bi-telegram{
+    color:#4361ee;
+  }
+
+  .bi-whatsapp{
+    color:white;
+  }
+
+  .bi-link-45deg{
+    color:white;
+  }
+
+  .bi-messenger{
+    color: transparent;
+    background: linear-gradient(90deg, rgba(255,105,104,1) 0%, rgba(163,52,250,1) 50%, rgba(6,149,255,1) 100%);
+    background-clip: text;
+     }
+
+  /*.bi-messenger::before{
+    content: none;
+  
+  }*/
+
+  .share{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    
+  }
+
+  .share span{
+    color: white;
+    padding: 12px;
+  }
+
+
+
+
+
+
+  /*SOCIAL*/
+  .dropbtnSocial {
+    background-color: var(--arancione);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+
+  }
+  
+  .dropdownSocial {
+    float: right;
+  }
+  
+  .dropdown-content-social{
+    display: none;
+    position: relative;
+    background-color: var(--grigiochiaro);
+    width: 100%;
+    border-radius: 100%;
+    z-index: 1;
+
+  }
+
+  .dropdown-content-social a:hover{
+    text-decoration: none;
+
+  }
+
+  .dropdown-content-social a:hover {background-color: #ff8b3d}
+  
+  .dropdownSocial:hover .dropdown-content-social {display: block;}
+  
+  .dropdownSocial:hover .dropbtnSocial {background-color: var(--arancione);}
+
+/*------------------PLYBOY----------------------*/

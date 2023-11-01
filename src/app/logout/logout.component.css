@@ -1,0 +1,12 @@
+.btn{
+    width: 50%;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.logout{
+    width: 50%;
+    margin: auto;
+    min-width: 300px;
+    max-width: 400px;
+}

@@ -1,0 +1,27 @@
+.form-control{
+    background-color: var(--grigiochiaro);
+    border: none;
+    color: var(--grigioscuro);
+    border-bottom: 5px solid var(--grigioscuro);
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+   
+   .form-control:focus{
+    border-bottom: 5px solid var(--grigioscuro);
+    box-shadow: none;
+}
+    
+.registra{
+    width: 50%;
+    margin: auto;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+#message{
+    text-align: center;
+    color: red;
+    margin-bottom: 10px;
+    height: 30px;
+}

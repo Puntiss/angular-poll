@@ -1,0 +1,44 @@
+<nav class="navbar navbar-default" style="background-color: #F1711A;border: none; border-radius: 0;height: 50px;">
+    <a class="navbar-brand" href="#" style="color:white;font-size: 25px;">
+        <img class="img-responsive" src="assets/img/sondaggioLogo.png" style="position:absolute; top: 0px; left:10px">
+    </a>
+    <div>
+
+        <div *ngIf="username == null">
+            <a href="#/">
+                <p class="navbar-text"
+                    style="color:white;float: right;margin-right: 10px;font-size: 15px;cursor: pointer;">
+                    <span class="glyphicon glyphicon-log-in"></span> Login
+                </p>
+            </a>
+        </div>
+
+        <div *ngIf="username != null">
+
+            <div class="dropdown">
+                <button class="dropbtn" style="min-width: 120px;text-align: initial"><span
+                        class="glyphicon glyphicon-user"></span> {{username}}</button>
+                <div class="dropdown-content">
+                    <a href="#/logout">
+                        <span class="glyphicon glyphicon-log-out"></span> Logout
+                    </a>
+                    <a href="#/logout">
+                        <span class="glyphicon glyphicon-info-sign"></span> Profile
+                    </a>
+                </div>
+            </div>
+
+
+            <a href="#/sceltaSondaggi">
+                <p class="navbar-text"
+                    style="color:white;float: right;margin-right: 10px;font-size: 15px;cursor: pointer;">
+                    <span class="glyphicon glyphicon-menu-hamburger"></span> Poll list
+                </p>
+            </a>
+
+
+
+
+        </div>
+    </div>
+</nav>

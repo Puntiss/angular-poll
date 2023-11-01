@@ -1,0 +1,23 @@
+<div class="container">
+    <form [formGroup]="opzioniForm">    
+        <div class="page-header">
+            <h1> <textarea type="text" class="domanda-input" formControlName="domanda" placeholder="Title" rows="1"></textarea> </h1>
+        </div>
+        <h3> <textarea type="text" class="domanda-input" formControlName="descrizione" placeholder="Description" rows="4"></textarea>    </h3>
+ 
+        <div class="roles">
+                <button (click)="aggiungiOpzione()" class="none"><span class="glyphicon glyphicon-plus"></span></button>
+                <input type="text" class="role" formControlName="aggiungiOpzione" placeholder="Add option"><br>
+
+                <div *ngFor="let opzione of listaOpzioni">
+                <button (click)="rimuoviOpzione(opzione.id)" class="none"><span
+                        class="glyphicon glyphicon-minus"></span></button>
+                <input type="text" class="role" formControlName="opzione{{opzione.id}}" [value]="opzione.descrizione"
+                    (change)="valuechange($event,opzione.id)"><br>
+            </div>
+
+        </div>
+        <button class="btn btn-primary btn-signin" type="submit" style="background-color: #F1711A;border: none;"
+            (click)="creaSondaggio()">Add Poll</button>
+    </form>
+</div>

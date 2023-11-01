@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="registra" style="margin-top: 200px;">
+        <div id="message">
+            <label>{{messaggio}}</label>
+        </div>
+        <form id="registraForm" (ngSubmit)="Registrati()">
+            <span id="reauth-email" class="reauth-email"></span>
+
+            <input type="text" name="username" id="username" class="form-control" placeholder="Username" required
+                autofocus [(ngModel)]="utente.username" [formControl]="username">
+
+            <input type="text" id="email" name="email" class="form-control" placeholder="Email" required
+                [(ngModel)]="utente.email" [formControl]="username">
+
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required
+                [(ngModel)]="utente.password" [formControl]="username">
+
+            <div style="margin-top: 20px; margin-bottom: 10px">
+                <input type="checkbox" id="termini" required [(ngModel)]="termini"
+                    [ngModelOptions]="{standalone: true}">&nbsp;
+                <label>Ho letto e accetto i <a href="https://help.shopify.com/it/manual/checkout-settings/refund-privacy-tos" target="_blank">termini e le condizioni</a></label>
+            </div>
+            <button class="btn btn-primary btn-block btn-signin" type="submit"
+                style="background-color: #F1711A;border: none;border-radius: 0px;">Registrati</button>
+        </form>
+    </div>
+</div>

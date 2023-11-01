@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="login" style="margin-top: 200px;">
+        <form [formGroup]="loginForm" (ngSubmit)="Accedi()">
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="text" formControlName="username" id="username" class="form-control" placeholder="Username"
+                required autofocus>
+            <input type="password" formControlName="password" id="password" class="form-control" placeholder="Password"
+                required>
+            <div id="remember" class="checkbox">
+            </div>
+            <button class="btn btn-primary btn-block btn-signin" type="submit"
+                style="background-color: #F1711A;border: none;border-radius: 0px;"><span
+                    class="glyphicon glyphicon-log-in"></span> Login</button>
+            <div id="registra">
+                <a [routerLink]="['/registra']">Non hai ancora un account? Registrati qui</a>
+            </div>
+        </form>
+    </div>
+</div>

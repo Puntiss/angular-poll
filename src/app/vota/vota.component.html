@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="page-header">
+        <h1> {{sondaggio.domanda}} </h1>
+    </div>
+
+
+    <div *ngIf="ruolo != 'ADMIN'; else elseBlock">
+        <form [formGroup]="votoForm" (ngSubmit)="Vota()">
+            <div class="roles" *ngFor="let opzione of listaOpzioni">
+                <tr class="list-group-item" style="background: inherit; border: 0">
+                    <td style="width: 20px">
+                        <div *ngIf="opzione.isAlreadyScelta">
+                            <input type="radio" name="opt" [checked]="true" id="one">
+                        </div>
+                        <div *ngIf="!opzione.isAlreadyScelta">
+                            <input type="radio" formControlName="opt" name="opt" value="{{opzione.id}}" id="one">
+                        </div>
+                    </td>
+                    <td style="width: 200px">
+                        <div *ngIf="opzione.isAlreadyScelta">
+
+                            <label class="role" for="one">{{opzione.descrizione}}</label><br>
+                        </div>
+                        <div *ngIf="!opzione.isAlreadyScelta">
+                            <label class="role" for="one">{{opzione.descrizione}}</label><br>
+                        </div>
+                    </td>
+                    <td *ngIf="hasVotato" style="width: 50px">
+                        <span class="badge badge-primary badge-pill">{{opzione.count}}</span>
+                    </td>
+                    <td *ngIf="hasVotato" style="width: 65%">
+                        <span class="badge badge-primary badge-pill barra" style="width: 100px"
+                            [ngStyle]="{'width.%': (opzione.count/totvoti)*100}">&nbsp;</span>
+                    </td>
+                </tr>
+            </div>
+            <div *ngIf="!hasVotato; else elseBlockBtn">
+                <button class="btn btn-primary btn-signin" type="submit"
+                    style="background-color: #F1711A;border: none;"><i class="bi bi-check2-square"></i>
+                    Vota</button>
+            </div>
+            <ng-template #elseBlockBtn>
+                <button class="btn btn-primary btn-signin" type="submit"
+                    style="background-color: #F1711A;border: none;"><span class="glyphicon glyphicon-pencil"></span>
+                    Edit Vote</button>
+            </ng-template>
+        </form>
+    </div>
+
+    <ng-template #elseBlock>
+        <table class="table list-group list-group-flush grid">
+            <tr class="list-group-item" *ngFor="let opzione of listaOpzioni" style="background: inherit; border:0">
+                <td style="width: 200px">
+                    {{opzione.descrizione}}
+                </td>
+                <td style="width: 50px">
+                    <span class="badge badge-primary badge-pill">{{opzione.count}}</span>
+                </td>
+                <td style="width: 65%">
+                    <span class="badge badge-primary badge-pill barra" style="width: 100px"
+                        [ngStyle]="{'width.%': (opzione.count/totvoti)*100}">&nbsp;</span>
+                </td>
+            </tr>
+        </table>
+    </ng-template>
+</div>
+
+<div class="share">
+    <div class="dropdownSocial">
+        <div class="dropdown-content-social">
+            <a (click)="Copy()">
+                <div class="dot" style="background-color: darkslategrey;cursor: pointer;">
+                    <i class="bi bi-link-45deg"></i>
+                </div>
+            </a>
+            <a (click)="Telegram()">
+                <div class="dot" style="background-color: white;cursor: pointer;">
+                    <i class="bi bi-telegram"></i>
+                </div>
+            </a>
+            <a (click)="WhatsApp()">
+                <div class="dot" style="background-color: #25D366;cursor: pointer;">
+                    <i class="bi bi-whatsapp"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="dot" style="background: white">
+                    <i class="bi bi-messenger"></i>
+                </div>
+            </a>
+        </div>
+        <div class="dot">
+            <div class="dropbtnSocial"><i class="bi bi-share-fill" style="font-size: 25px;padding:7.5px"></i></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+@keyframes circus {
+    25%{transform: rotate(720deg)}
+    50%{ 
+        transform: scale(1.5);
+        font-size: 25px;
+    }
+    75%{transform: rotate(90deg);}
+}
+
+.scheda {
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-top: 60px;
+   /* animation-name: circus;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;*/
+}
+.panel-heading {
+    background-color: var(--grigioscuro); 
+    color: white; 
+    text-align: center;
+    height: 60px;
+    display: grid;
+    align-items: center;
+}
+.panel-body {
+    color: var(--grigioscuro); 
+    background-color: var(--sondaggipanel);
+}
+.panel-footer {
+    background-color: var(--sondaggipanel);
+}
+
+.descrizione {
+    overflow: hidden;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.parag {
+    margin: 0;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.glyphicon-plus:hover{
+    color: var(--arancione)
+}
+
+

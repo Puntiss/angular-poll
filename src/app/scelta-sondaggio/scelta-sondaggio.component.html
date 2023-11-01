@@ -1,0 +1,70 @@
+<div *ngIf="alert == 'Poll added!'">
+    <div class="alert alert-success" role="alert">
+        {{alert}}
+    </div>
+</div>
+<div *ngIf="alert == 'Poll deleted!'">
+    <div class="alert alert-danger" role="alert">
+        {{alert}}
+    </div>
+</div>
+
+
+<div class="container" style=" display: flex; flex-wrap: wrap; justify-content: center;margin-bottom: 100px; width:100%">
+    <a [routerLink]="['/aggiungiSondaggi']" style="color:black;text-decoration: none;">
+        <div *ngIf="ruolo == 'ADMIN'">
+            <div class="scheda"
+                style="width: 250px; height: 263px; box-shadow: 0px 0px 25px 0.1px;  background-color: gainsboro;">
+                <div class="panel-heading">
+                    <p class="parag">New poll</p>
+                </div>
+                <div class="panel-body" style="height: 150px">
+                    <p><span class="glyphicon glyphicon-plus"
+                            style="position: relative; top: 60px; left: 43%; font-size: 40px;"></span></p>
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </a>
+
+    <div *ngFor="let sondaggi of s">
+        <div class="scheda" style="width: 250px; box-shadow: 0px 0px 25px 0.1px;">
+            <div class="panel-heading">
+                <p class="parag">{{sondaggi.domanda}}</p>
+            </div>
+            <div class="panel-body" style="height: 150px">
+                <p class="descrizione">{{sondaggi.descrizione}}</p>
+            </div>
+            <div class="panel-footer">
+                <span *ngIf="ruolo == 'ADMIN'">
+                    <button class="btn btn-danger" (click)="rimuovi(sondaggi.id)" style="margin-right: 10px;"><span
+                            class="glyphicon glyphicon-trash"></span></button>
+                    <button class="btn btn-primary" [routerLink]="['/modificaSondaggio',sondaggi.id]"><span
+                            class="glyphicon glyphicon-edit"></span></button>
+                    <span style="margin-left: 15px;">
+                        <button class="btn" [routerLink]="['/vota', sondaggi.id]"
+                            style="background-color: #F1711A; color: white;"><span
+                                class="glyphicon glyphicon-stats"></span> Statistic</button>
+                    </span>
+                </span>
+                <span *ngIf="ruolo == 'USER'">
+                    <span style="margin-left: 15px;">
+                        <div *ngIf="sondaggi.hasVotato">
+                            <button class="btn" [routerLink]="['/vota', sondaggi.id]"
+                                style="background-color: #F1711A; color: white;"><span
+                                    class="glyphicon glyphicon-pencil"></span> Edit Vote</button>
+
+
+                        </div>
+                        <div *ngIf="!sondaggi.hasVotato">
+                            <button class="btn" [routerLink]="['/vota', sondaggi.id]"
+                                style="background-color: #F1711A; color: white;"><i class="bi bi-check2-square"></i> Vote</button>
+                        </div>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
